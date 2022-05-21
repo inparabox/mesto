@@ -1,0 +1,33 @@
+.footer{
+  color:#545454;
+  Font-family: Inter;
+  font-weight: 900;
+  Font-size: 18px;
+  Line-height: 21.78px;
+  padding: 0;
+  max-width: 880px;
+  margin:0 auto 60px;
+}
+
+@media (min-width: 619px) and (max-width: 917px) {
+.footer{
+  max-width: 581px;
+  margin:0 auto 36px;
+
+  font-weight: 400;
+  Font-size: 14px;
+  Line-height: 16.94px;
+}
+}
+
+
+
+@media (max-width: 618px) {
+  .footer {
+    max-width: 281px;
+    margin:0 auto 36px;
+    font-weight: 400;
+    Font-size: 14px;
+    Line-height: 16.94px;
+  }
+  }
