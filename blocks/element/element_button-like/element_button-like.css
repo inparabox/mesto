@@ -1,0 +1,19 @@
+.element__button-like{
+  height: 19px;
+  min-width: 22px;
+  background: transparent url(../../images/like.svg) 50%/19px no-repeat;
+  border: 0;
+  margin: auto 15px auto auto;
+  cursor: pointer;
+  /*background-color: #000000; это нужно перенести в статус актив */
+}
+
+.element__button-like:hover{
+  opacity: 0.5;
+  transition: 0.5s all
+}
+
+
+.element__button-like.active{
+  background-color: #000000;
+}

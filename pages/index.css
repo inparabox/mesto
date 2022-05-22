@@ -1,3 +1,4 @@
+
 @import url(../vendor/fonts.css);
 @import url(../vendor/normalize.css);
 
@@ -20,10 +21,12 @@
 @import url(../blocks/profile/profile__mission/profile__mission.css);
 @import url(../blocks/profile/profile__name/profile__name.css);
 
-
-
-
-@import url(../blocks/elements/elements.css);
+/*element*/
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/element_button-like/element_button-like.css);
+@import url(../blocks/element/element_image/element_image.css);
+@import url(../blocks/element/element_info/element_info.css);
+@import url(../blocks/element/element_text/element_text.css);
 
 @import url(../blocks/Footer/footer.css);
 
