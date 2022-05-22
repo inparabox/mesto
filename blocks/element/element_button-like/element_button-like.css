@@ -1,7 +1,7 @@
 .element__button-like{
   height: 19px;
   min-width: 22px;
-  background: transparent url(../../images/like.svg) 50%/19px no-repeat;
+  background: transparent url(../../../images/like.svg) 50%/19px no-repeat;
   border: 0;
   margin: auto 15px auto auto;
   cursor: pointer;
