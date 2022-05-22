@@ -9,71 +9,6 @@
   justify-content: center;
 }
 
-
-.element{
-  
-  margin: 0;
-  padding: 0;
-  width: 282px;
-  border-radius: 10px;
-
-  background: #fff;
-  overflow: hidden;
-  
-  display: flex;
-  flex-direction: column;
-
-  
-  position: relative;
-
-}
-
-.element__image{
-  height: 282px;
-  width: 282px;
-  object-fit: cover;
-}
-
-.element__text{
-  color: #000000;
-  Font-family: Inter;
-  font-weight: 900;
-  Font-size: 24px;
-  Line-height: 29.05px;
-  margin: 25px 21px 0;
-  padding: 0;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.element__info{
-  background-color: #FFFFFF;
-  height: 79px;
-  width: 282px;
-  display: flex;
-}
-
-.element__button-like{
-  height: 19px;
-  min-width: 22px;
-  background: transparent url(../../images/like.svg) 50%/19px no-repeat;
-  border: 0;
-  margin: auto 15px auto auto;
-  cursor: pointer;
-  /*background-color: #000000; это нужно перенести в статус актив */
-}
-
-.element__button-like:hover{
-  opacity: 0.5;
-  transition: 0.5s all
-}
-
-
-.element__button-like.active{
-  background-color: #000000;
-}
-
 @media (min-width: 619px) and (max-width: 917px) {
   .elements {
     max-width: calc(100% - 36px);
@@ -93,5 +28,3 @@
     margin: 36px auto 92px;
   }
 }
-
-

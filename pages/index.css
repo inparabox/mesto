@@ -1,2 +1,5 @@
-@import url(../blocks/header/header.css);
-@import url(../blocks/profile/profile.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/element_button-like/element_button-like.css);
+@import url(../blocks/element/element_image/element_image.css);
+@import url(../blocks/element/element_info/element_info.css);
+@import url(../blocks/element/element_text/element_text.css);
