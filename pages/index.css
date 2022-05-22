@@ -1,1 +1,7 @@
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/profile__avatar/profile__avatar.css);
+@import url(../blocks/profile/profile__button-add/profile__button-add.css);
+@import url(../blocks/profile/profile__button-edit/profile__button-edit.css);
+@import url(../blocks/profile/profile__info/profile__info.css);
+@import url(../blocks/profile/profile__mission/profile__mission.css);
+@import url(../blocks/profile/profile__name/profile__name.css);
