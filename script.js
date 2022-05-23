@@ -1,3 +1,4 @@
+
 /*Задаем переменные всем элементам взаимодействия*/
 
 let buttonEdit = document.querySelector(".profile__button-edit"); 
@@ -12,10 +13,6 @@ let formElement = document.querySelector(".popup__container");
 let q1 = document.querySelector(".profile__name");
 let q2 = document.querySelector(".profile__mission");
 
-/*
-let q3 = document.querySelector(".popup-name");
-let q4 = document.querySelector(".popup-job");
-*/
 let nameInput = document.querySelector(".popup-name");
 let jobInput = document.querySelector(".popup-job");
 
@@ -39,6 +36,7 @@ function openPopUp() {
 closePopupButton.addEventListener('click',function(){
   popupBg.classList.remove('popup_opened');
   q1.textContent = nameInput.value;
+  q2.textContent = jobInput.value; 
 })
 
 
@@ -47,8 +45,8 @@ closePopupButton.addEventListener('click',function(){
 function formSubmitHandler (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   popupBg.classList.remove('popup_opened');
-  nameInput.value =  q1.textContent;
-  jobInput.value = q2.textContent;   
+  q1.textContent = nameInput.value;
+  q2.textContent = jobInput.value; 
 }
 
 
@@ -56,4 +54,3 @@ function formSubmitHandler (evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler); 
-
