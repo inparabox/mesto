@@ -83,7 +83,6 @@
 .popup__job{
   padding: 29px 0 12px;
   margin-bottom: 47px;
-  
 }
 
 .popup__btn-save{
@@ -125,7 +124,6 @@
   .popup__h1 {
     font-size: 18px;
     line-height: 22px;
-    margin-bottom: 75px;
 
   }
 }
@@ -148,3 +146,33 @@
 
   }
 }
+
+@media screen and (max-width: 480px){
+  .popup__name{
+    padding: 64px 0 13px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .popup__job{
+    padding: 29px 0 13px;
+    margin-bottom: 49px;
+  }
+}
+
+@media screen and (max-width: 555px){
+  .popup__btn-close {
+    position: absolute;
+    top: -36px;
+    right: 0px;
+    background: transparent url(../../images/Close-Icon.svg) 50%/20px no-repeat ; 
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+}
+
+
+
