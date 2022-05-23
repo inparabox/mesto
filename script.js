@@ -12,8 +12,8 @@ let formElement = document.querySelector(".popup__container");
 let q1 = document.querySelector(".profile__name");
 let q2 = document.querySelector(".profile__mission");
 
-let nameInput = document.querySelector(".popup-name");
-let jobInput = document.querySelector(".popup-job");
+let nameInput = document.querySelector(".popup__name");
+let jobInput = document.querySelector(".popup__job");
 
 
 

@@ -30,7 +30,7 @@
   padding: 34px 36px 37px;
   box-sizing: border-box;
   background: #FFFFFF;
-  /*box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);*/
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   transition: 0.5s all;
 
@@ -40,13 +40,11 @@
   position: absolute;
   top: -40px;
   right: -40px;
-  background: transparent url(../../images/Close-Icon.svg) 50%/32px no-repeat; 
+  background: transparent url(../../images/Close-Icon.svg) 50%/32px no-repeat ; 
   width: 32px;
   height: 32px;
   border: none;
   cursor: pointer;
-  
-
 }
 
 .popup__btn-close:hover{
@@ -62,7 +60,7 @@
   line-height: 29px;
   margin: 0;
   padding: 0;
-  margin-bottom: 37px;
+  /*margin-bottom: 54px;*/
   
 }
 
@@ -72,11 +70,20 @@
   line-height: 17px;
   border: none;
   outline:none;
-  border-bottom: 1px solid #000000;
-  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);;
   width: 100%;
-  padding: 0 0 13px;
-  margin-bottom: 43px;
+  
+}
+
+
+.popup__name{
+  padding: 48px 0 12px;
+}
+
+.popup__job{
+  padding: 29px 0 12px;
+  margin-bottom: 47px;
+  
 }
 
 .popup__btn-save{
@@ -92,6 +99,7 @@
   border-radius: 2px;
   cursor: pointer;
   padding: 0;
+  margin: 0;
  
 }
 

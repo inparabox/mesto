@@ -3,9 +3,11 @@
   min-width: 22px;
   background: transparent url(../../../images/like.svg) 50%/19px no-repeat;
   border: 0;
-  margin: auto 15px auto auto;
+  margin: auto 20px auto auto;
+  padding: 0;
   cursor: pointer;
   /*background-color: #000000; это нужно перенести в статус актив */
+ 
 }
 
 .element__button-like:hover{

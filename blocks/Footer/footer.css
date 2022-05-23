@@ -1,22 +1,18 @@
 .footer{
-  color:#545454;
-  Font-family: Inter;
-  font-weight: 900;
-  Font-size: 18px;
-  Line-height: 21.78px;
-  padding: 0;
   max-width: 880px;
-  margin:0 auto 60px;
+  margin: 0 auto 60px;
+  padding: 0;
+  
 }
 
 @media (min-width: 619px) and (max-width: 917px) {
 .footer{
   max-width: 581px;
-  margin:0 auto 36px;
-
   font-weight: 400;
   Font-size: 14px;
   Line-height: 16.94px;
+  margin: 0 auto 36px;
+  padding: 0;
 }
 }
 
@@ -25,9 +21,25 @@
 @media (max-width: 618px) {
   .footer {
     max-width: 281px;
-    margin:0 auto 36px;
-    font-weight: 400;
-    Font-size: 14px;
-    Line-height: 16.94px;
+    margin: 0 auto 36px;
+    padding: 0;
   }
+  }
+
+  .footer__text{
+    padding: 0;
+    margin: 0;
+    color:#545454;
+    font-weight: 400;
+    Font-size: 18px;
+    Line-height: 21.78px;
+    margin:0;
+    padding: 0;
+  }
+
+  @media (max-width:619px){
+    .footer__text{
+      Font-size: 14px;
+      line-height: 16.94px;
+    }
   }
