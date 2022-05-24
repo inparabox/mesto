@@ -35,3 +35,10 @@
 
 /* pop up*/
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/popup__btn-close/popup__btn-close.css);
+@import url(../blocks/popup/popup__btn-save/popup__btn-save.css);
+@import url(../blocks/popup/popup__container/popup__container.css);
+@import url(../blocks/popup/popup__h1/popup__h1.css);
+@import url(../blocks/popup/popup__job/popup__job.css);
+@import url(../blocks/popup/popup__name/popup__name.css);
+
