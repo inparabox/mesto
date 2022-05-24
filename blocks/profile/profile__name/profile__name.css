@@ -1,0 +1,21 @@
+.profile__name{
+    Font-family: Inter;
+    font-weight: 500;
+    Font-size: 42px;
+    Line-height: 48px;
+    padding: 0;
+    margin: 0;
+    /**margin: 22px 0 -10px 0;**/
+    /**float: left;** - переносит следующий элемент аля inline block но хз как позиционировать, контейнер прижат к верху**/
+  }
+  
+  
+  @media (max-width: 917px) {
+    .profile__name{
+      Font-family: Inter;
+      font-weight: 500;
+      Font-size: 27px;
+      Line-height: 32.68px;
+      padding: 0;
+    }
+  }

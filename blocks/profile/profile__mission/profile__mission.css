@@ -1,0 +1,19 @@
+.profile__mission{
+    Font-family: Inter;
+    font-weight: 400;
+    Font-size: 18px;
+    Line-height: 21.78px;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+  
+  @media (max-width: 917px) {
+    .profile__mission{
+      Font-family: Inter;
+      font-weight: 400;
+      Font-size: 14px;
+      Line-height: 16.94px;
+      padding: 0;
+      margin: 14px 0 0 0;
+    }
+    }
