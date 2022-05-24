@@ -1,6 +1,5 @@
 /*Задаем переменные всем элементам взаимодействия*/
 
-/*let buttonEdit = document.querySelector(".profile__button-edit"); */
 let popupBg = document.querySelector('.popup'); //  попап 
 let openPopupButton = document.querySelector('.open-popup'); // Кнопка редкатирования профиля 
 let closePopupButton = document.querySelector('.popup__btn-close'); // Крестик закрытия попапа
@@ -14,8 +13,6 @@ let q2 = document.querySelector(".profile__mission");
 
 let nameInput = document.querySelector(".popup__name");
 let jobInput = document.querySelector(".popup__job");
-
-
 
 
 /* открываем поп-ап V1 */
