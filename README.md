@@ -20,4 +20,4 @@ JavaScript
 
 Подключены сторонние шрифты (локально)
 
-Страница проекта раскатана на GitHub - 
+Страница проекта раскатана на GitHub - https://inparabox.github.io/mesto/
