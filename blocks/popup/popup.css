@@ -57,17 +57,17 @@
   color: #000000;
   font-weight: 900;
   font-size: 24px;
-  line-height: 29px;
+  line-height: 29.05px;
   margin: 0;
   padding: 0;
-  /*margin-bottom: 54px;*/
+
   
 }
 
 .popup__container input{
   font-weight: 400 ;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 16.94px;
   border: none;
   outline:none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);;
@@ -77,12 +77,12 @@
 
 
 .popup__name{
-  padding: 48px 0 12px;
+  padding: 48px 0 10px;
 }
 
 .popup__job{
-  padding: 29px 0 12px;
-  margin-bottom: 47px;
+  padding: 30px 0 10px;
+  margin-bottom: 48px;
 }
 
 .popup__btn-save{
@@ -91,7 +91,7 @@
   background: #000000;
   font-weight: 400 ;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 21.78px;
   color: #FFFFFF;
   outline: none;
   border: none;
@@ -123,7 +123,7 @@
 @media screen and (max-width: 480px) {
   .popup__h1 {
     font-size: 18px;
-    line-height: 22px;
+    line-height: 21.78px;
 
   }
 }
@@ -131,7 +131,7 @@
 @media screen and (max-width: 480px) {
   .popup__btn-save {
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16.94px;
 
   }
 }
@@ -139,8 +139,6 @@
 
 @media screen and (max-width: 480px) {
   .popup__btn-save {
-    font-size: 14px;
-    line-height: 17px;
     min-height: 46px;
     width: 238px;
 
@@ -149,13 +147,13 @@
 
 @media screen and (max-width: 480px){
   .popup__name{
-    padding: 64px 0 13px;
+    padding: 72px 0 10px;
   }
 }
 
 @media screen and (max-width: 480px){
   .popup__job{
-    padding: 29px 0 13px;
+    padding: 29px 0 10px;
     margin-bottom: 49px;
   }
 }
