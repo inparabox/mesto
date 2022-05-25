@@ -1,9 +1,9 @@
-.element__text{
+.element__text {
   color: #000000;
-  Font-family: Inter;
+  font-family: Inter;
   font-weight: 900;
-  Font-size: 24px;
-  Line-height: 29.05px;
+  font-size: 24px;
+  line-height: 29.05px;
   margin: 25px 0 0 21px;
   padding: 0;
   text-overflow: ellipsis;
