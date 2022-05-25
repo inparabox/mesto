@@ -1,9 +1,9 @@
-.header__logo{
+.header__logo {
   margin: 45px auto 0;
 }
 
 @media (max-width: 917px) {
-  .header__logo{
+  .header__logo {
     margin: 28px 27px 0;
-}
+  }
 }
