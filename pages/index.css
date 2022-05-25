@@ -28,6 +28,7 @@
 @import url(../blocks/element/element_text/element_text.css);
 
 @import url(../blocks/Footer/footer.css);
+@import url(../blocks/Footer/footer__text/footer__text.css);
 
 /* pop up*/
 @import url(../blocks/popup/popup.css);
