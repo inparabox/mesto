@@ -9,7 +9,7 @@ HTML
 CSS
 JavaScript
 
-Котрольные точки для адаптивной верстки: 320 - 1280
+Котрольные точки для адаптивной верстки: 320 - 468 - 619 - 917 - 1280
 **Figma**
 
 * [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
