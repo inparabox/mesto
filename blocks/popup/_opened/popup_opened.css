@@ -1,4 +1,4 @@
-.popup.popup_opened{
+.popup_opened {
   display: block;
-  transition: 0.5s all; 
+  transition: 0.5s all;
 }

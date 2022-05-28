@@ -23,6 +23,7 @@ function openPopUp() {
     popupBg.classList.add('popup_opened');
     nameInput.value =  q1.textContent;
     jobInput.value = q2.textContent;    
+    console.log('привет');
   };
  
 
