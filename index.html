@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="stylesheet" href="./pages/index.css" />
   </head>
 
   <body class="page">
@@ -80,9 +80,7 @@
           alt="фото"
         />
         <figcaption class="element__info">
-          <h3 class="element__text">
-            какая-то подпись не влезла в форму
-          </h3>
+          <h3 class="element__text">какая-то подпись не влезла в форму</h3>
           <button class="element__button-like"></button>
         </figcaption>
       </figure>
@@ -98,26 +96,22 @@
           <button class="element__button-like"></button>
         </figcaption>
       </figure>
-
-      <div class="popup">
-        <form class="popup__container">
-          <h3 class="popup__h1">Редактироваль профиль</h3>
-          <input type="text" class="popup__name" />
-          <input type="text" class="popup__job" />
-          <button
-            type="button"
-            class="popup__btn-close"
-            title="Закрыть"
-          ></button>
-          <button type="submit" class="popup__btn-save" title="Сохранить">
-            Сохранить
-          </button>
-        </form>
-      </div>
     </section>
     <footer class="footer">
       <p class="footer__text">© 2022. Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <form class="popup__container">
+        <h3 class="popup__h1">Редактироваль профиль</h3>
+        <input type="text" class="popup__name" />
+        <input type="text" class="popup__job" />
+        <button type="button" class="popup__btn-close" title="Закрыть"></button>
+        <button type="submit" class="popup__btn-save" title="Сохранить">
+          Сохранить
+        </button>
+      </form>
+    </div>
+
     <script src="../mesto/script.js"></script>
   </body>
 </html>
