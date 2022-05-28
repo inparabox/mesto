@@ -8,8 +8,3 @@
   display: none;
   transition: 0.5s all;
 }
-
-.popup_opened {
-  display: block;
-  transition: 0.5s all;
-}
