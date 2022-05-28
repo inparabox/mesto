@@ -101,17 +101,16 @@
       <p class="footer__text">© 2022. Mesto Russia</p>
     </footer>
     <div class="popup">
-      <form class="popup__container">
+      <form class="popup__container" method="post" name="popup-data">
         <h3 class="popup__h1">Редактироваль профиль</h3>
-        <input type="text" class="popup__name" />
-        <input type="text" class="popup__job" />
+        <input type="text" class="popup__name" name="popup-name"/>
+        <input type="text" class="popup__job" name=popup-job/>
         <button type="button" class="popup__btn-close" title="Закрыть"></button>
         <button type="submit" class="popup__btn-save" title="Сохранить">
           Сохранить
         </button>
       </form>
     </div>
-
-    <script src="../mesto/script.js"></script>
   </body>
+  <script src="../mesto/script.js"></script>
 </html>
