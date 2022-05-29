@@ -7,8 +7,7 @@
 }
 
 @media (max-width: 917px) {
-  .header__logo {
-    margin: 28px 27px 0;
+  .header {
     padding-bottom: 31.6px;
   }
 }

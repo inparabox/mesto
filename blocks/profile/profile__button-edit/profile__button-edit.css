@@ -7,6 +7,7 @@
   padding: 0;
   align-self: center;
   cursor: pointer;
+  flex-grow: 1;
 }
 
 .profile__button-edit:hover {

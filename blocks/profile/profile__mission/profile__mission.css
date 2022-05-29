@@ -5,6 +5,9 @@
   line-height: 21.78px;
   padding: 0;
   margin: 16px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 917px) {
@@ -15,5 +18,6 @@
     line-height: 16.94px;
     padding: 0;
     margin: 14px 0 0 0;
+    text-align: center;
   }
 }
