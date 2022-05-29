@@ -39,3 +39,4 @@
 @import url(../blocks/popup/popup__h1/popup__h1.css);
 @import url(../blocks/popup/popup__job/popup__job.css);
 @import url(../blocks/popup/popup__name/popup__name.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
