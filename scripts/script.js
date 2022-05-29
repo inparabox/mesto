@@ -61,7 +61,8 @@ closePopupButton.addEventListener('click',function(){
 // Выберите элементы, куда должны быть вставлены значения полей
 function formSubmitHandler (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  popupBg.classList.remove('popup_opened');
+  /*popupBg.classList.remove('popup_opened');*/
+  closePopUp();
   q1.textContent = nameInput.value;
   q2.textContent = jobInput.value; 
 }
