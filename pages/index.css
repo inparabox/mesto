@@ -32,7 +32,7 @@
 
 /* pop up*/
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
+
 @import url(../blocks/popup/popup__btn-close/popup__btn-close.css);
 @import url(../blocks/popup/popup__btn-save/popup__btn-save.css);
 @import url(../blocks/popup/popup__container/popup__container.css);
