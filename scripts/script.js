@@ -42,9 +42,11 @@ openPopupButton.addEventListener('click',function(){
 
 
 closePopupButton.addEventListener('click',closePopUp);
-  function closePopUp() {
+
+function closePopUp() {
   popupBg.classList.remove('popup_opened');
 };
+
 
 
 /* Закрывакем поп-ап V2
