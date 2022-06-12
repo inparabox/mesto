@@ -4,7 +4,10 @@
 
 @media (max-width: 917px) {
   .header__logo {
+    width: 103.74px;
+    height: 24.4px;
     margin: 28px 27px 0;
    /* padding-bottom: 31.6px;*/
   }
 }
+
