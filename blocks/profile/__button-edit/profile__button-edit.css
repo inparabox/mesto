@@ -7,9 +7,20 @@
   padding: 0;
   align-self: center;
   cursor: pointer;
-  flex-grow: 1;
+  background-size: 10px; 
+  /*flex-grow: 1;*/
 }
 
 .profile__button-edit:hover {
   opacity: 0.6;
+}
+
+@media (max-width: 917px) {
+  .profile__button-edit {
+    height: 18px;
+    width: 18px;
+    border: 1px solid #ffffff;
+    margin-left: 10px;
+    background-size: 7.5px; 
+  }
 }
