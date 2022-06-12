@@ -9,17 +9,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 500px;
   /**margin: 22px 0 -10px 0;**/
   /**float: left;** - переносит следующий элемент аля inline block но хз как позиционировать, контейнер прижат к верху**/
 }
 
 @media (max-width: 917px) {
   .profile__name {
-    font-family: Inter;
-    font-weight: 500;
     font-size: 27px;
     line-height: 32.68px;
     padding: 0;
     text-align: center;
+    max-width: 531px;
+  }
+}
+
+@media (max-width: 619px) {
+  .profile__name {
+    max-width: 232px;
   }
 }

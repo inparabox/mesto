@@ -8,16 +8,22 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 500px;
 }
 
 @media (max-width: 917px) {
   .profile__mission {
-    font-family: Inter;
-    font-weight: 400;
     font-size: 14px;
     line-height: 16.94px;
     padding: 0;
     margin: 14px 0 0 0;
     text-align: center;
+    max-width: 531px;
+  }
+}
+
+@media (max-width: 619px) {
+  .profile__mission {
+    max-width: 282px;
   }
 }
