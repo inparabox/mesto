@@ -17,13 +17,10 @@
 
 @media screen and (max-width: 555px) {
   .popup__btn-close {
-    position: absolute;
     top: -36px;
     right: 0px;
     background: transparent url(../../../images/Close-Icon.svg) 50%/20px no-repeat;
     width: 20px;
     height: 20px;
-    border: none;
-    cursor: pointer;
   }
 }

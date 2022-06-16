@@ -1,23 +1,19 @@
 .profile__info {
-  /*width: 575px;*/
-  height: 73px;
   margin: 0;
   padding: 0;
   display: block;
-  /*flex-wrap: wrap;*/
 }
 
-@media (min-width: 320px) and (max-width: 917px) {
+@media (min-width: 917px) {
+  .profile__info {
+    height: 73px;
+  }
+}
+
+@media (max-width: 917px) {
   .profile__info {
     margin: 26px auto 36px;
     justify-content: center;
   }
 }
 
-@media (max-width: 319px) {
-  .profile__info {
-    /*width: 100%;*/
-    margin: 26px auto 36px;
-    justify-content: center;
-  }
-}

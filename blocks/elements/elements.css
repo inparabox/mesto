@@ -12,7 +12,6 @@
   .elements {
     max-width: calc(100% - 36px);
     grid-template-columns: repeat(2, 282px);
-    grid-column-gap: 20px;
     grid-row-gap: 17px;
     margin: 36px auto 48px;
   }
@@ -22,7 +21,6 @@
   .elements {
     max-width: calc(100% - 36px);
     grid-template-columns: repeat(1, 282px);
-    grid-column-gap: 20px;
     grid-row-gap: 17px;
     margin: 36px auto 48px;
   }
