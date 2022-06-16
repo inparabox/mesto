@@ -10,8 +10,6 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 500px;
-  /**margin: 22px 0 -10px 0;**/
-  /**float: left;** - переносит следующий элемент аля inline block но хз как позиционировать, контейнер прижат к верху**/
 }
 
 @media (max-width: 917px) {

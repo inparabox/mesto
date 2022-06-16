@@ -12,6 +12,7 @@
   cursor: pointer;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .popup__btn-save:hover {

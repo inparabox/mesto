@@ -17,24 +17,5 @@
 @media (max-width: 618px) {
   .footer {
     max-width: 281px;
-}
-
-/*
-@media (min-width: 619px) and (max-width: 917px) {
-  .footer {
-    max-width: 581px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16.94px;
-    margin: 0 auto 36px;
   }
 }
-
-@media (max-width: 618px) {
-  .footer {
-    max-width: 281px;
-    margin: 0 auto 36px;
-  }
-}
-
-*/
