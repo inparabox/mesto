@@ -74,3 +74,61 @@ function formSubmitHandler (evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler); 
+
+
+
+
+// template элементы
+
+// const boxTemplate = document.querySelector('#template-box'); ебаный пример из практикума который нахуй не нужен
+const boxTemplate = document.querySelector('#template-box').content; // Обращение к созданному template элементу
+const elements = document.querySelector('.elements'); // обращение к полю куда будет вставлен template элемент
+
+
+
+/* Вставляем по одной картинке
+
+const box = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+box.querySelector('.element__image').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg';
+box.querySelector('.element__text').textContent = 'Архыз';
+elements.append(box);
+*/
+
+
+/* Используем массив и forEach для вставки всех элементов из массива*/
+
+
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+    alt: 'Вид на заснеженные и зеленые склоны горы Архыз'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+]; 
+
+initialCards.forEach(function (element){
+  const box = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  box.querySelector('.element__image').src = element.link;
+  box.querySelector('.element__text').textContent = element.name;
+  elements.append(box);
+})
