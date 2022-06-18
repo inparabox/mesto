@@ -184,3 +184,19 @@ function formSubmitHandler2 (evt) {
 
 //  нужно найти как удалять карточку со страницы после добавления новой карточки
 
+//like for box
+
+let like = document.querySelector('.element__button-like');
+like.addEventListener('click',likeInColor);
+
+function likeInColor(){
+  console.log('Ща покрасим');
+  like.classList.add('active');
+}
+
+like.removeEventListener('click', likeNoColor);
+
+function likeNoColor(){
+  console.log('Ща  уберем цвет');
+  like.classList.remove('active');
+}

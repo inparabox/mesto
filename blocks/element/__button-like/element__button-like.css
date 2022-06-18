@@ -14,5 +14,6 @@
 }
 
 .element__button-like.active {
-  background-color: #000000;
+ 
+  background: black url(../../../images/like.svg) 50%/19px no-repeat;
 }
