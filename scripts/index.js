@@ -8,7 +8,7 @@ let closePopupButtonAddForm = document.querySelector('.popup__btn-close-for-addC
 
 /* Находим формы в полях данных из формы*/
 
-let formElement = document.querySelector(".popup__container");
+let EditFormElement = document.querySelector(".popup__container-editProfile");
 let q1 = document.querySelector(".profile__name");
 let q2 = document.querySelector(".profile__mission");
 
@@ -75,7 +75,7 @@ function formSubmitHandler (evt) {
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler); 
+EditFormElement.addEventListener('submit', formSubmitHandler); 
 
 
 
@@ -133,6 +133,7 @@ initialCards.forEach(function (element){
   box.querySelector('.element__image').src = element.link;
   box.querySelector('.element__text').textContent = element.name;
   elements.append(box);
+
 })
 
 
@@ -159,4 +160,27 @@ function openPopUpAdd() {
   };
 
 
+
+// Добавляем возможность добавить новую карточку
+
+let AddCardFormElement = document.querySelector(".popup__container-addCard");
+AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
+
+let newCardName = document.querySelector(".element__text");
+let newCardImage = document.querySelector(".element__image");
+
+let nameInputNewCard = document.querySelector(".popup__place-name");
+let ImageInputNewCard = document.querySelector(".popup__place-image");
+
+
+function formSubmitHandler2 (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  closeAddForm();
+  newCardName.textContent = nameInputNewCard.value;
+  newCardImage.src = ImageInputNewCard.value; 
+  elements.append(box);
+}
+
+
+//  нужно найти как удалять карточку со страницы после добавления новой карточки
 
