@@ -1,8 +1,9 @@
 /*Задаем переменные всем элементам взаимодействия*/
 
-let popupBg = document.querySelector('.popup'); //  попап 
+let popupEditProfile = document.querySelector('.popup__edit'); //  попап редактирования профиля
 let openPopupButton = document.querySelector('.open-popup'); // Кнопка редкатирования профиля 
-let closePopupButton = document.querySelector('.popup__btn-close'); // Крестик закрытия попапа
+let closePopupButton = document.querySelector('.popup__btn-close'); // Крестик закрытия попапа для Edit profile
+let closePopupButtonAddForm = document.querySelector('.popup__btn-close-for-addCard'); // Крестик закрытия попапа для AddCard
 
 
 /* Находим формы в полях данных из формы*/
@@ -20,7 +21,7 @@ let jobInput = document.querySelector(".popup__job");
 openPopupButton.addEventListener('click', openPopUp);
 
 function openPopUp() {
-    popupBg.classList.add('popup_opened');
+    popupEditProfile.classList.add('popup_opened');
     nameInput.value =  q1.textContent;
     jobInput.value = q2.textContent;    
     console.log('привет');
@@ -30,7 +31,7 @@ function openPopUp() {
 /* открываем поп-ап V2
 
 openPopupButton.addEventListener('click',function(){
-  popupBg.classList.add('popup_opened');
+  popupEditProfile.classList.add('popup_opened');
   nameInput.value =  q1.textContent;
   jobInput.value = q2.textContent;    
 });
@@ -44,7 +45,8 @@ openPopupButton.addEventListener('click',function(){
 closePopupButton.addEventListener('click',closePopUp);
 
 function closePopUp() {
-  popupBg.classList.remove('popup_opened');
+  popupEditProfile.classList.remove('popup_opened');
+
 };
 
 
@@ -52,7 +54,7 @@ function closePopUp() {
 /* Закрывакем поп-ап V2
 
 closePopupButton.addEventListener('click',function(){
-  popupBg.classList.remove('popup_opened');
+  popupEditProfile.classList.remove('popup_opened');
 
 })
 
@@ -63,7 +65,7 @@ closePopupButton.addEventListener('click',function(){
 // Выберите элементы, куда должны быть вставлены значения полей
 function formSubmitHandler (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  /*popupBg.classList.remove('popup_opened');*/
+  /*popupEditProfile.classList.remove('popup_opened');*/
   closePopUp();
   q1.textContent = nameInput.value;
   q2.textContent = jobInput.value; 
@@ -132,3 +134,29 @@ initialCards.forEach(function (element){
   box.querySelector('.element__text').textContent = element.name;
   elements.append(box);
 })
+
+
+// Добавляем PopUp для кнопки + открываем
+
+let popupAddCard = document.querySelector('.popup__addCard'); // Поп-ап добавления нового элемента
+let addCard = document.querySelector('.profile__button-add'); // Кнопка добавления нового элемента
+
+addCard.addEventListener('click', openPopUpAdd);
+
+function openPopUpAdd() {
+  popupAddCard.classList.add('popup_opened');  
+  console.log('helo my friend');
+  };
+
+  /* Закрывакем поп-ап addCard   */
+
+  closePopupButtonAddForm.addEventListener('click',closeAddForm);
+
+  function closeAddForm() {
+    console.log('ты тыкнул на крестик');
+    popupAddCard.classList.remove('popup_opened');
+  
+  };
+
+
+

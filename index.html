@@ -130,13 +130,13 @@
 
     -->
 
-    
+
     </section>
     <footer class="footer">
       <p class="footer__text">© 2022. Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup__edit">
       <div class="popup__container">
         <h3 class="popup__edit-profile">Редактировать профиль</h3>
         <form name="popup" method="post" class="popup__form">
@@ -148,6 +148,21 @@
           </button>
         </form>
         <button type="button" class="popup__btn-close" title="Закрыть"></button>
+      </div>
+    </div>
+
+    <div class="popup popup__addCard">
+      <div class="popup__container">
+        <h3 class="popup__edit-profile">Новое место</h3>
+        <form name="popup" method="post" class="popup__form">
+          <input type="text" class="popup__place-name popup__name" name="popup-name" placeholder="Название"/>
+          <input type="text" class="popup__place-link popup__job" name="popup-job" placeholder="Ссылка на картинку"/>
+
+          <button type="submit" class="popup__btn-save" title="Сохранить">
+            Сохранить
+          </button>
+        </form>
+        <button type="button" class="popup__btn-close popup__btn-close-for-addCard" title="Закрыть"></button>
       </div>
     </div>
 
