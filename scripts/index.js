@@ -163,8 +163,10 @@ function openPopUpAdd() {
 
 // Добавляем возможность добавить новую карточку
 
-let AddCardFormElement = document.querySelector(".popup__container-addCard");
+let AddCardFormElement = document.querySelector(".popup__container-addCard"); 
 AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
+
+
 
 let newCardName = document.querySelector(".element__text");
 let newCardImage = document.querySelector(".element__image");
