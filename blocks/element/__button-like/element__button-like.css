@@ -6,6 +6,7 @@
   margin: auto 20px auto auto;
   padding: 0;
   cursor: pointer;
+  
 }
 
 .element__button-like:hover {
@@ -14,5 +15,7 @@
 }
 
 .element__button-like.active {
-  background-color: #000000;
+  mask-image: url(../../../images/like.svg);
+  fill:black;
 }
+

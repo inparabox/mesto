@@ -94,7 +94,16 @@ const box = boxTemplate.querySelector('.element').cloneNode(true); // клони
 box.querySelector('.element__image').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg';
 box.querySelector('.element__text').textContent = 'Архыз';
 elements.append(box);
-*/
+
+
+
+
+
+
+
+
+
+
 
 
 /* Используем массив и forEach для вставки всех элементов из массива*/
@@ -128,13 +137,16 @@ const initialCards = [
   }
 ]; 
 
+/**/
 initialCards.forEach(function (element){
-  const box = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
-  box.querySelector('.element__image').src = element.link;
-  box.querySelector('.element__text').textContent = element.name;
-  elements.append(box);
+  const newBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  newBox.querySelector('.element__image').src = element.link;
+  newBox.querySelector('.element__image').alt = element.alt;
+  newBox.querySelector('.element__text').textContent = element.name;
+  elements.append(newBox);
 
 })
+
 
 
 // Добавляем PopUp для кнопки + открываем
@@ -149,7 +161,7 @@ function openPopUpAdd() {
   console.log('helo my friend');
   };
 
-  /* Закрывакем поп-ап addCard   */
+  /* Закрывакем поп-ап addCard  */
 
   closePopupButtonAddForm.addEventListener('click',closeAddForm);
 
@@ -166,21 +178,25 @@ function openPopUpAdd() {
 let AddCardFormElement = document.querySelector(".popup__container-addCard");
 AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
 
-let newCardName = document.querySelector(".element__text");
-let newCardImage = document.querySelector(".element__image");
 
-let nameInputNewCard = document.querySelector(".popup__place-name");
-let ImageInputNewCard = document.querySelector(".popup__place-image");
+
+
 
 
 function formSubmitHandler2 (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  closeAddForm();
-  newCardName.textContent = nameInputNewCard.value;
-  newCardImage.src = ImageInputNewCard.value; 
-  elements.append(box);
+  closeAddForm(); // закрываем форму
+  const UserBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  elements.prepend(UserBox); //добавляем блок
+
+  //создаем элементы input'ов пользователя
+  let UserInputName = document.querySelector(".popup__place-name");
+  let UserInputPhoto = document.querySelector(".popup__place-image");
+  let UserCardName = document.querySelector(".element__text");
+  let UserCardPhoto = document.querySelector(".element__image");
+
+  UserCardName.textContent = UserInputName.value;
+  UserCardPhoto.src = UserInputPhoto.value;
 }
 
-
-//  нужно найти как удалять карточку со страницы после добавления новой карточки
-
+//Перекрашщиваем like
