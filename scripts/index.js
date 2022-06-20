@@ -82,32 +82,6 @@ EditFormElement.addEventListener('submit', formSubmitHandler);
 
 // template элементы
 
-// const boxTemplate = document.querySelector('#template-box'); ебаный пример из практикума который нахуй не нужен
-const boxTemplate = document.querySelector('#template-box').content; // Обращение к созданному template элементу
-const elements = document.querySelector('.elements'); // обращение к полю куда будет вставлен template элемент
-
-
-
-/* Вставляем по одной картинке
-
-const box = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
-box.querySelector('.element__image').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg';
-box.querySelector('.element__text').textContent = 'Архыз';
-elements.append(box);
-
-
-
-
-
-
-
-
-
-
-
-
-/* Используем массив и forEach для вставки всех элементов из массива*/
-
 
 const initialCards = [
   {
@@ -137,24 +111,34 @@ const initialCards = [
   }
 ]; 
 
-/**/
-initialCards.forEach(function (element){
-  const newBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
-  newBox.querySelector('.element__image').src = element.link;
-  newBox.querySelector('.element__image').alt = element.alt;
-  newBox.querySelector('.element__text').textContent = element.name;
-  elements.append(newBox);
 
-})
+
+const cardsList = document.querySelector(".elements"); // обращение к полю куда будет вставлен template элемент
+const cardTemplate = document.querySelector("#template-box"); // Обращение к созданному template элементу
+
+
+const creatCard = function ({ name, link }) {
+  const card = cardTemplate.content.querySelector(".element").cloneNode(true);
+  card.querySelector('.element__image').src = link;
+  card.querySelector('.element__text').textContent = name;
+  return card;
+};
+
+const addCard = ({name, link}) => {
+  const card = creatCard({name, link});
+  cardsList.prepend(card);
+}
+
+initialCards.forEach(addCard);
 
 
 
 // Добавляем PopUp для кнопки + открываем
 
 let popupAddCard = document.querySelector('.popup__addCard'); // Поп-ап добавления нового элемента
-let addCard = document.querySelector('.profile__button-add'); // Кнопка добавления нового элемента
+let ButtonAddNewCard = document.querySelector('.profile__button-add'); // Кнопка добавления нового элемента
 
-addCard.addEventListener('click', openPopUpAdd);
+ButtonAddNewCard.addEventListener('click', openPopUpAdd);
 
 function openPopUpAdd() {
   popupAddCard.classList.add('popup_opened');  
@@ -175,28 +159,35 @@ function openPopUpAdd() {
 
 // Добавляем возможность добавить новую карточку
 
+
+
+  //создаем элементы input'ов пользователя
+  const UserInputName = document.querySelector(".popup__place-name");
+  const UserInputPhoto = document.querySelector(".popup__place-image");
+  
+  
+ 
+  
+  let UserCardName = document.querySelector(".element__text");
+  let UserCardPhoto = document.querySelector(".element__image");
+  
+
+
+
+
+
 let AddCardFormElement = document.querySelector(".popup__container-addCard");
 AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
-
-
-
-
 
 
 function formSubmitHandler2 (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   closeAddForm(); // закрываем форму
-  const UserBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
-  elements.prepend(UserBox); //добавляем блок
+  UserCardName = UserInputName.value;
+  UserCardPhoto = UserInputPhoto.value;
+  addCard({UserCardName, UserCardPhoto});
 
-  //создаем элементы input'ов пользователя
-  let UserInputName = document.querySelector(".popup__place-name");
-  let UserInputPhoto = document.querySelector(".popup__place-image");
-  let UserCardName = document.querySelector(".element__text");
-  let UserCardPhoto = document.querySelector(".element__image");
 
-  UserCardName.textContent = UserInputName.value;
-  UserCardPhoto.src = UserInputPhoto.value;
 }
 
-//Перекрашщиваем like
+
