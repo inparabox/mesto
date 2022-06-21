@@ -117,6 +117,9 @@ const cardsList = document.querySelector(".elements"); // обращение к 
 const cardTemplate = document.querySelector("#template-box"); // Обращение к созданному template элементу
 
 
+
+
+
 const creatCard = function ({ name, link }) {
   const card = cardTemplate.content.querySelector(".element").cloneNode(true);
   card.querySelector('.element__image').src = link;
@@ -124,12 +127,13 @@ const creatCard = function ({ name, link }) {
   return card;
 };
 
-const addCard = ({name, link}) => {
-  const card = creatCard({name, link});
-  cardsList.prepend(card);
+
+const addSixCard = ({ name, link }) => {
+  const sixCards = creatCard({name, link});
+  cardsList.prepend(sixCards);
 }
 
-initialCards.forEach(addCard);
+initialCards.forEach(addSixCard);
 
 
 
@@ -159,18 +163,64 @@ function openPopUpAdd() {
 
 // Добавляем возможность добавить новую карточку
 
+// old version
+
+/*
+const UserInputName = document.querySelector(".popup__place-name"); //создаем элементы input'ов пользователя
+const UserInputPhoto = document.querySelector(".popup__place-image"); //создаем элементы input'ов пользователя
 
 
+const UserCardName = document.querySelector(".element__text"); // создаем переменные для обращения 
+const UserCardPhoto = document.querySelector(".element__image"); // создаем переменные для обращения 
+*/
+
+let AddCardFormElement = document.querySelector(".popup__container-addCard"); // создаем элемент форму popup
+AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
+
+function formSubmitHandler2 (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  closeAddForm(); // закрываем форму
+  const userCard = cardTemplate.content.querySelector(".element").cloneNode(true); // клонируем содержимое тега 
+  cardsList.prepend(userCard); //добавляем блок
+  
+
+  userCard.querySelector('.element__image') = NewCardLink;
+  userCard.querySelector('.element__text') = NewCardText;
+
+
+
+  let UserInputName = document.querySelector(".popup__place-name");
+  let UserInputPhoto = document.querySelector(".popup__place-image");
+
+  NewCardLink.textContent = UserInputName.value;
+  NewCardText.src = UserInputPhoto.value;
+
+
+}
   //создаем элементы input'ов пользователя
-  const UserInputName = document.querySelector(".popup__place-name");
-  const UserInputPhoto = document.querySelector(".popup__place-image");
-  
-  
- 
-  
+
+
+/*
+
+  let UserInputName = document.querySelector(".popup__place-name");
+  let UserInputPhoto = document.querySelector(".popup__place-image");
   let UserCardName = document.querySelector(".element__text");
   let UserCardPhoto = document.querySelector(".element__image");
-  
+
+  UserCardName.textContent = UserInputName.value;
+  UserCardPhoto.src = UserInputPhoto.value;
+
+
+
+/* v2
+
+userCard.querySelector('.element__image').src = UserInputLink;
+userCard.querySelector('.element__text').textContent = UserInputText;
+let UserInputName = document.querySelector(".popup__place-name");
+let UserInputPhoto = document.querySelector(".popup__place-image");
+
+UserInputLink = UserInputName.value;
+UserInputText =UserInputPhoto.value;
 
 
 
@@ -183,11 +233,12 @@ AddCardFormElement.addEventListener('submit', formSubmitHandler2);
 function formSubmitHandler2 (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   closeAddForm(); // закрываем форму
+  addCard({UserCardName, UserCardPhoto});
   UserCardName = UserInputName.value;
   UserCardPhoto = UserInputPhoto.value;
-  addCard({UserCardName, UserCardPhoto});
-
-
+  
+  
 }
 
 
+*/
