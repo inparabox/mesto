@@ -145,6 +145,7 @@ const cloneCard = function(name, link) {
   const newBox = boxTemplate.querySelector('.element').cloneNode(true); // Обращение к элементам тега   
   newBox.querySelector('.element__image').src = link;
   newBox.querySelector('.element__text').textContent = name;
+  addCardListeners
   return newBox;
 }
 
@@ -196,13 +197,10 @@ function openPopUpAdd() {
 
 
 
-// Добавляем возможность добавить новую карточку
+// Добавляем возможность добавить новую карточку пользователю
 
 let AddCardFormElement = document.querySelector(".popup__container-addCard");
 AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
-
-
-
 
 
 
@@ -221,6 +219,15 @@ function formSubmitHandler2 (evt) {
   UserCardName.textContent = UserInputName.value;
   UserCardPhoto.src = UserInputPhoto.value;
 }
+
+
+
+
+
+
+
+
+
 
 //Перекрашщиваем like
 
