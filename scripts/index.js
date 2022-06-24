@@ -79,10 +79,6 @@ EditFormElement.addEventListener('submit', formSubmitHandler);
 
 
 
-
-// template элементы
-
-
 const initialCards = [
   {
     name: 'Архыз',
@@ -113,36 +109,75 @@ const initialCards = [
 
 
 
-const cardsList = document.querySelector(".elements"); // обращение к полю куда будет вставлен template элемент
-const cardTemplate = document.querySelector("#template-box"); // Обращение к созданному template элементу
+// template элементы
 
 
+const elements = document.querySelector('.elements'); // обращение к полю куда будет вставлен template элемент
+
+/*
+//Вставляем по одной картинке
+
+newBox.querySelector('.element__image').src = 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg';
+newBox.querySelector('.element__text').textContent = 'Архыз';
+elements.append(newBox);
+*/
 
 
+/*
+// Используем массив и forEach для вставки всех элементов из массива
+// в этом коде сразу несколько действий , в чатике все делаеют не так, говорят ревьюверы просят это разделить, хотя примеры в тренажере давали именно такие
 
-const creatCard = function ({ name, link }) {
-  const card = cardTemplate.content.querySelector(".element").cloneNode(true);
-  card.querySelector('.element__image').src = link;
-  card.querySelector('.element__text').textContent = name;
-  return card;
-};
+initialCards.forEach(function (element){
+  const newBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  newBox.querySelector('.element__image').src = element.link;
+  newBox.querySelector('.element__image').alt = element.alt;
+  newBox.querySelector('.element__text').textContent = element.name;
+  elements.append(newBox);
 
+})
+*/
 
-const addSixCard = ({ name, link }) => {
-  const sixCards = creatCard({name, link});
-  cardsList.prepend(sixCards);
+//теперь нужно разбить функцию на 3: 1) клон карточки 2) добавление карточки на страницу 3) forEach
+
+// Создаем шаблон карточки 
+const cloneCard = function(name, link) {
+  const boxTemplate = document.querySelector('#template-box').content; // Обращение к template элементу
+  const newBox = boxTemplate.querySelector('.element').cloneNode(true); // Обращение к элементам тега   
+  newBox.querySelector('.element__image').src = link;
+  newBox.querySelector('.element__text').textContent = name;
+  return newBox;
 }
 
-initialCards.forEach(addSixCard);
+// вставляем 6 карточек
+
+initialCards.forEach(({name, link}) => {
+  //создаем карточку
+  const element = cloneCard(name, link) 
+  //встраиваем ее в dom
+  elements.prepend(element)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 // Добавляем PopUp для кнопки + открываем
 
 let popupAddCard = document.querySelector('.popup__addCard'); // Поп-ап добавления нового элемента
-let ButtonAddNewCard = document.querySelector('.profile__button-add'); // Кнопка добавления нового элемента
+let addCard = document.querySelector('.profile__button-add'); // Кнопка добавления нового элемента
 
-ButtonAddNewCard.addEventListener('click', openPopUpAdd);
+addCard.addEventListener('click', openPopUpAdd);
 
 function openPopUpAdd() {
   popupAddCard.classList.add('popup_opened');  
@@ -163,45 +198,21 @@ function openPopUpAdd() {
 
 // Добавляем возможность добавить новую карточку
 
-// old version
-
-/*
-const UserInputName = document.querySelector(".popup__place-name"); //создаем элементы input'ов пользователя
-const UserInputPhoto = document.querySelector(".popup__place-image"); //создаем элементы input'ов пользователя
-
-
-const UserCardName = document.querySelector(".element__text"); // создаем переменные для обращения 
-const UserCardPhoto = document.querySelector(".element__image"); // создаем переменные для обращения 
-*/
-
-let AddCardFormElement = document.querySelector(".popup__container-addCard"); // создаем элемент форму popup
+let AddCardFormElement = document.querySelector(".popup__container-addCard");
 AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
+
+
+
+
+
 
 function formSubmitHandler2 (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   closeAddForm(); // закрываем форму
-  const userCard = cardTemplate.content.querySelector(".element").cloneNode(true); // клонируем содержимое тега 
-  cardsList.prepend(userCard); //добавляем блок
-  
+  const UserBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  elements.prepend(UserBox); //добавляем блок
 
-  userCard.querySelector('.element__image') = NewCardLink;
-  userCard.querySelector('.element__text') = NewCardText;
-
-
-
-  let UserInputName = document.querySelector(".popup__place-name");
-  let UserInputPhoto = document.querySelector(".popup__place-image");
-
-  NewCardLink.textContent = UserInputName.value;
-  NewCardText.src = UserInputPhoto.value;
-
-
-}
   //создаем элементы input'ов пользователя
-
-
-/*
-
   let UserInputName = document.querySelector(".popup__place-name");
   let UserInputPhoto = document.querySelector(".popup__place-image");
   let UserCardName = document.querySelector(".element__text");
@@ -209,36 +220,39 @@ function formSubmitHandler2 (evt) {
 
   UserCardName.textContent = UserInputName.value;
   UserCardPhoto.src = UserInputPhoto.value;
-
-
-
-/* v2
-
-userCard.querySelector('.element__image').src = UserInputLink;
-userCard.querySelector('.element__text').textContent = UserInputText;
-let UserInputName = document.querySelector(".popup__place-name");
-let UserInputPhoto = document.querySelector(".popup__place-image");
-
-UserInputLink = UserInputName.value;
-UserInputText =UserInputPhoto.value;
-
-
-
-
-
-let AddCardFormElement = document.querySelector(".popup__container-addCard");
-AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
-
-
-function formSubmitHandler2 (evt) {
-  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  closeAddForm(); // закрываем форму
-  addCard({UserCardName, UserCardPhoto});
-  UserCardName = UserInputName.value;
-  UserCardPhoto = UserInputPhoto.value;
-  
-  
 }
 
+//Перекрашщиваем like
+
+
+/*
+//  нужно найти как удалять карточку со страницы после добавления новой карточки
+
+//like for box
+
+let like = document.querySelector('.element__button-like');
+like.addEventListener('click',likeInColor);
+
+function likeInColor(){
+  console.log('Ща покрасим');
+  like.classList.add('active');
+}
+
+like.removeEventListener('click', likeNoColor);
+
+function likeNoColor(){
+  console.log('Ща  уберем цвет');
+  like.classList.remove('active');
+}
+/*
+// удаляем карточку с страницы
+
+let delButton = document.querySelector('.element__delete-button');
+
+function deleteCard() {
+  console.log('Хо хо хо')
+}
+
+delButton.addEventListener('click', deleteCard);
 
 */
