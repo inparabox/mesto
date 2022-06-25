@@ -8,7 +8,10 @@ let closePopupButtonAddForm = document.querySelector('.popup__btn-close-for-addC
 
 /* Находим формы в полях данных из формы*/
 
-let EditFormElement = document.querySelector(".popup__container-editProfile");
+let EditFormElement = document.querySelector(".popup__container-editProfile"); // Форма Редактирвоания профиля
+let EditFormSaveButton = document.querySelector(".popup__btn-save-edit-form");  // Кнопка сохранения в редактиврования профиля
+
+
 let q1 = document.querySelector(".profile__name");
 let q2 = document.querySelector(".profile__mission");
 
@@ -24,7 +27,7 @@ function openPopUp() {
     popupEditProfile.classList.add('popup_opened');
     nameInput.value =  q1.textContent;
     jobInput.value = q2.textContent;    
-    console.log('привет');
+    console.log('Это кнопка редактирования профиля');
   };
  
 
@@ -46,12 +49,13 @@ closePopupButton.addEventListener('click',closePopUp);
 
 function closePopUp() {
   popupEditProfile.classList.remove('popup_opened');
+  console.log('Это крестик закрытия формы редактирования профиля')
 
 };
 
 
 
-/* Закрывакем поп-ап V2
+/* Закрываем и сохраняем данные пользователя поп-ап V2
 
 closePopupButton.addEventListener('click',function(){
   popupEditProfile.classList.remove('popup_opened');
@@ -60,22 +64,39 @@ closePopupButton.addEventListener('click',function(){
 
 */
 
+// Прикрепляем обработчик к форме:
+// он будет следить за событием “submit” - «отправка»
 
 
-// Выберите элементы, куда должны быть вставлены значения полей
-function formSubmitHandler (evt) {
+
+EditFormSaveButton.addEventListener('click', SaveUserDataInProfile); // новое 2
+
+function SaveUserDataInProfile (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   /*popupEditProfile.classList.remove('popup_opened');*/
   closePopUp();
   q1.textContent = nameInput.value;
   q2.textContent = jobInput.value; 
+  console.log('Это кнопка сохранения и отправики новых данных в форму')
 }
 
+/*
+
+EditFormElement.addEventListener('submit', SaveUserDataInProfile); 
+
+// Выберите элементы, куда должны быть вставлены значения полей
+function SaveUserDataInProfile (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  //popupEditProfile.classList.remove('popup_opened');
+  closePopUp();
+  q1.textContent = nameInput.value;
+  q2.textContent = jobInput.value; 
+  console.log('Это кнопка сохраненрия и отправики новых данных в форму')
+}
+*/
 
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-EditFormElement.addEventListener('submit', formSubmitHandler); 
+
 
 
 
@@ -138,34 +159,25 @@ initialCards.forEach(function (element){
 */
 
 //теперь нужно разбить функцию на 3: 1) клон карточки 2) добавление карточки на страницу 3) forEach
+const boxTemplate = document.querySelector('#template-box').content; // Обращение к template элементу
 
 // Создаем шаблон карточки 
-const cloneCard = function(name, link) {
-  const boxTemplate = document.querySelector('#template-box').content; // Обращение к template элементу
+function cloneCard({ name, link }) {
   const newBox = boxTemplate.querySelector('.element').cloneNode(true); // Обращение к элементам тега   
   newBox.querySelector('.element__image').src = link;
   newBox.querySelector('.element__text').textContent = name;
-  addCardListeners
+  // подписка на события
   return newBox;
 }
 
 // вставляем 6 карточек
 
-initialCards.forEach(({name, link}) => {
+initialCards.forEach((name, link) => {
   //создаем карточку
   const element = cloneCard(name, link) 
   //встраиваем ее в dom
   elements.prepend(element)
 })
-
-
-
-
-
-
-
-
-
 
 
 
@@ -182,31 +194,165 @@ addCard.addEventListener('click', openPopUpAdd);
 
 function openPopUpAdd() {
   popupAddCard.classList.add('popup_opened');  
-  console.log('helo my friend');
+  console.log('Это кнопка плюс');
   };
 
-  /* Закрывакем поп-ап addCard  */
+  /* Закрывакем поп-ап addCard */
 
   closePopupButtonAddForm.addEventListener('click',closeAddForm);
 
   function closeAddForm() {
-    console.log('ты тыкнул на крестик');
+    console.log('Это крестик закрытия в форме добавления нового фото');
     popupAddCard.classList.remove('popup_opened');
   
   };
 
-
+ 
 
 // Добавляем возможность добавить новую карточку пользователю
 
-let AddCardFormElement = document.querySelector(".popup__container-addCard");
-AddCardFormElement.addEventListener('submit', formSubmitHandler2); 
+let AddCardFormElement = document.querySelector(".popup__container-addCard"); // форма добавления новой карточки
+let AddFormSaveButton = document.querySelector(".popup__btn-save-add-form");  // Кнопка сохранения в форме новой карточки
 
 
 
-function formSubmitHandler2 (evt) {
+//
+
+
+let UserElement = document.querySelector('.element') ;
+
+
+
+
+
+AddFormSaveButton.addEventListener('click', AddUserCard); 
+
+/*
+// попытка 6
+
+
+let UserInputName = document.querySelector(".popup__place-name");
+let UserInputPhoto = document.querySelector(".popup__place-image");
+let UserCardName = document.querySelector(".element__text");
+let UserCardPhoto = document.querySelector(".element__image");
+
+
+
+// вставляем карточку в DOM
+function AddUserCard(evt) {
+  console.log('Check one two'); //  работает
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы
+  
+  const cardInfo = {
+    name: UserInputName.value,
+    link: UserInputPhoto.value,
+  }
+
+  const newCard = cloneCard(cardInfo);
+
+  elements.prepend(newCard);
+  closeAddForm(); // закрываем форму
+  console.log(newCard);
+  
+}
+*/
+
+// попытка 6_1
+
+
+let UserInputName = document.querySelector(".popup__place-name");
+let UserInputPhoto = document.querySelector(".popup__place-image");
+let UserCardName = document.querySelector(".element__text");
+let UserCardPhoto = document.querySelector(".element__image");
+
+
+
+// вставляем карточку в DOM
+function AddUserCard(evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы
+
+  const cardInfo = {
+    name: UserInputName.value,
+    link: UserInputPhoto.value,
+  }
+
+  const userCard = cloneCard(cardInfo);
+  elements.prepend(userCard);
+  closeAddForm(); // закрываем форму
+}
+
+
+
+/* попытка 7-0
+let UserInputName = document.querySelector(".popup__place-name");
+let UserInputPhoto = document.querySelector(".popup__place-image");
+let UserCardName = document.querySelector(".element__text");
+let UserCardPhoto = document.querySelector(".element__image");
+
+
+function CreatUserCard() {
+  const userCard = cloneCard(UserCardName, UserCardPhoto);
+  UserCardName.textContent = UserInputName.value;
+  UserCardPhoto.src = UserInputPhoto.value;
+  return userCard;
+  
+}
+
+// вставляем карточку в DOM
+function AddUserCard(evt) {
+  console.log('Check one two'); //  работает
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  CreatUserCard();
+  elements.prepend(userCard);
+  closeAddForm(); // закрываем форму
+
+}
+
+*/
+
+
+
+
+
+/* попытка 8
+// создаем элемент - новая добавлющаяся карточка с кнопки
+
+
+let UserInputName = document.querySelector(".popup__place-name");
+let UserInputPhoto = document.querySelector(".popup__place-image");
+
+
+// вставляем карточку в DOM
+function AddUserCard(evt) {
+  console.log('Check one two'); //  работает
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+
+  const cardInfo = {
+    name: UserInputName.value,
+    link: UserInputPhoto.value,
+  }
+  
+  // Шаблон карточки пользователя
+  const newUserCard = cloneCard(cardInfo);
+  elements.prepend(newUserCard);
+  closeAddForm(); // закрываем форму
+
+}
+
+*/
+
+
+
+
+
+
+
+/*
+ //это работает
+function AddUserCard (evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   closeAddForm(); // закрываем форму
+  const boxTemplate = document.querySelector('#template-box').content; // Обращение к template элементу
   const UserBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
   elements.prepend(UserBox); //добавляем блок
 
@@ -219,7 +365,48 @@ function formSubmitHandler2 (evt) {
   UserCardName.textContent = UserInputName.value;
   UserCardPhoto.src = UserInputPhoto.value;
 }
+*/
 
+/*
+
+function RenderUserCard(UserCardName, UserCardPhoto) {
+  const userCard = cloneCard(UserCardName, UserCardPhoto);
+  elements.prepend(userCard);
+  //addCardListeners(userCard);
+
+  UserCardName.value = UserInputName.value;
+  UserCardPhoto.value = UserInputPhoto.value;
+  return userCard;
+  
+}
+*/
+
+
+
+
+
+
+/*
+
+function renderUserCard (evt) {
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  closeAddForm(); // закрываем форму
+  const UserBox = boxTemplate.querySelector('.element').cloneNode(true); // клонируем содержимое тега 
+  elements.prepend(UserBox); //добавляем блок
+
+  //создаем элементы input'ов пользователя
+
+
+  UserCardName.textContent = UserInputName.value;
+  UserCardPhoto.src = UserInputPhoto.value;
+
+
+
+  
+}
+
+
+*/
 
 
 
