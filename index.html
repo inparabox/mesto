@@ -31,22 +31,19 @@
       <button type="button" class="profile__button-add"></button>
     </section>
     <section class="elements">
-      
       <template id="template-box">
         <figure class="element">
-          <div class="element__image-container">
-            <img
+          <img
             class="element__image"
             alt="фото"
           />
-          <button type="button" class="element__delete-button"></button>
-          </div>
-          
           <figcaption class="element__info">
             <h3 class="element__text"></h3>
             <button class="element__button-like" type="button"></button>
           </figcaption>
         </figure>
+
+
       </template>
 
 
@@ -146,7 +143,7 @@
           <input type="text" class="popup__name" name="popup-name" />
           <input type="text" class="popup__job" name="popup-job" />
 
-          <button type="submit" class="popup__btn-save" title="Сохранить">
+          <button type="submit" class="popup__btn-save popup__btn-save-edit-form" title="Сохранить">
             Сохранить
           </button>
         </form>
@@ -161,7 +158,7 @@
           <input type="text" class="popup__place-name popup__name" name="popup-name" placeholder="Название"/>
           <input type="text" class="popup__place-image popup__job" name="popup-image" placeholder="Ссылка на картинку"/>
 
-          <button type="submit" class="popup__btn-save" title="Сохранить">
+          <button type="submit" class="popup__btn-save popup__btn-save-add-form" title="Сохранить">
             Сохранить
           </button>
         </form>
