@@ -16,7 +16,7 @@ let q2 = document.querySelector(".profile__mission");
 let nameInput = document.querySelector(".popup__name");
 let jobInput = document.querySelector(".popup__job");
 
-/* открываем поп-ап V1 */
+//вешаем обработчик и открываем поп-ап
 
 openPopupButton.addEventListener("click", openPopUp);
 
@@ -27,9 +27,17 @@ function openPopUp() {
   console.log("Это кнопка редактирования профиля");
 }
 
+// вешаем обработчик и Закрываем и сохраняем данные пользователя поп-ап
+
+closePopupButton.addEventListener("click", closePopUp);
+
+function closePopUp() {
+  popupEditProfile.classList.remove("popup_opened");
+  console.log("Это крестик закрытия формы редактирования профиля");
+}
 
 
-/*
+/*  V2 в эом случае функции невозможно переиспользовать
 
 // Открываем поп-ап V2
 
@@ -40,22 +48,12 @@ openPopupButton.addEventListener('click',function(){
 });
 
 
-// Закрывакем поп-ап V2
-closePopupButton.addEventListener("click", closePopUp);
-
-function closePopUp() {
-  popupEditProfile.classList.remove("popup_opened");
-  console.log("Это крестик закрытия формы редактирования профиля");
-}
-
-/* Закрываем и сохраняем данные пользователя поп-ап V2
+// Закрываем и сохраняем данные пользователя поп-ап V2
 
 closePopupButton.addEventListener('click',function(){
   popupEditProfile.classList.remove('popup_opened');
 
 })
-
-
 
 */
 
