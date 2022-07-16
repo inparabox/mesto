@@ -48,6 +48,8 @@ const buttonSaveNewElement = document.querySelector('.popup__btn-save-add-form')
 
 
 
+
+
 //вешаем обработчик и открываем поп-ап
 
 openPopupButton.addEventListener("click", openPopUp);
@@ -145,6 +147,9 @@ function cloneCard({ name, link }) {
   // подписка на события
   newBox.querySelector('.element__button-like').addEventListener('click', function (evt) {
     console.log('Тыкнул на сердечко');
+  })
+  newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
+    console.log('Тыкнул на корзину');
   })
   
   return newBox;
