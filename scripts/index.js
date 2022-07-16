@@ -145,6 +145,9 @@ function cloneCard({ name, link }) {
   // подписка на события
   newBox.querySelector('.element__button-like').addEventListener('click', function (evt) {
     console.log('Тыкнул на сердечко');
+    evt.target.classList.toggle('element__button-like-active');
+
+    // спросить как передевать данные в JS если добавить класс в СSS в виде .active и можно ли использовать toggle
   })
   
   return newBox;
@@ -240,4 +243,6 @@ function clearForm (evt) {
   console.log('Очистка формы');
   document.querySelector('.popup__form-add-card').reset();
 }
+
+//закрашиваем like
 
