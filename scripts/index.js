@@ -50,6 +50,7 @@ const buttonSaveNewElement = document.querySelector('.popup__btn-save-add-form')
 
 
 
+
 //вешаем обработчик и открываем поп-ап
 
 openPopupButton.addEventListener("click", openPopUp);
@@ -150,6 +151,10 @@ function cloneCard({ name, link }) {
   })
   newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
     console.log('Тыкнул на корзину');
+    const buttonDel = document.querySelector('.element__delete-button');
+    const elementToDelete = buttonDel.closest('.element');
+    elementToDelete.remove();
+
   })
   
   return newBox;
