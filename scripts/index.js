@@ -9,13 +9,11 @@ let closePopupButtonAddForm = document.querySelector(".popup__btn-close-for-addC
 
 let EditFormElement = document.querySelector(".popup__container-editProfile"); // Форма Редактирвоания профиля
 let EditFormSaveButton = document.querySelector(".popup__btn-save-edit-form"); // Кнопка сохранения в редактиврования профиля
-
 let q1 = document.querySelector(".profile__name");
 let q2 = document.querySelector(".profile__mission");
 let nameInput = document.querySelector(".popup__name");
 let jobInput = document.querySelector(".popup__job");
 
-//вешаем обработчик и открываем поп-ап
 
 const templateBox = document.querySelector('#template-box').content;
 const element = templateBox.querySelector('.element');
@@ -107,7 +105,6 @@ function SaveUserDataInProfile(evt) {
 }
 
 
-
 // 6 карточек из коробки
 
 const initialCards = [
@@ -158,9 +155,9 @@ function cloneCard({ name, link }) {
 function createUserCard() {
   
   let itemo = {
-    name: inputName.textContent,
-    link: inputLink.textContent,
-    /*alt: inputName.textContent,*/
+    name: inputName.value,
+    link: inputLink.value,
+    alt: inputLink.value,
   }
   const userCard = cloneCard(itemo);
   elements.prepend(userCard);
@@ -204,6 +201,9 @@ function openPopUpAddNewPlace() {
 }
 
 
+
+
+/**/
 //Закрываем поп-ап ADD NEW PLACE
 buttonClosePopUpAddNew.addEventListener('click', (evt) => {
   console.log('Закртываем поп-ап ADD NEW');
