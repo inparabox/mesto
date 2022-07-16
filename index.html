@@ -35,17 +35,25 @@
         <figure class="element">
           <img
             class="element__image"
-            alt=" "
+            alt="фото"
           />
           <figcaption class="element__info">
             <h3 class="element__text"></h3>
-            <button type="button" class="element__button-like"></button>
+            <button class="element__button-like" type="button"></button>
           </figcaption>
         </figure>
-      </template> 
 
-      <!-- 
 
+      </template>
+
+
+
+
+
+
+
+
+<!--
 
 
       <figure class="element">
@@ -123,23 +131,40 @@
       </figure>
 
     -->
+
+
     </section>
     <footer class="footer">
       <p class="footer__text">© 2022. Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup__edit">
       <div class="popup__container">
         <h3 class="popup__edit-profile">Редактировать профиль</h3>
         <form name="popup" method="post" class="popup__form">
           <input type="text" class="popup__name" name="popup-name" />
           <input type="text" class="popup__job" name="popup-job" />
 
-          <button type="submit" class="popup__btn-save" title="Сохранить">
+          <button type="submit" class="popup__btn-save popup__btn-save-edit-form" title="Сохранить">
             Сохранить
           </button>
         </form>
         <button type="button" class="popup__btn-close" title="Закрыть"></button>
+      </div>
+    </div>
+
+    <div class="popup popup__addCard" id="popupAddCard">
+      <div class="popup__container">
+        <h3 class="popup__edit-profile">Новое место</h3>
+        <form name="popup" method="post" class="popup__form popup__form-add-card">
+          <input type="text" class="popup__place-name popup__name" name="popup-name" placeholder="Название"/>
+          <input type="text" class="popup__place-link popup__job" name="popup-job" placeholder="Ссылка на картинку"/>
+
+          <button type="submit" class="popup__btn-save popup__btn-save-add-form" title="Сохранить">
+            Сохранить
+          </button>
+        </form>
+        <button type="button" class="popup__btn-close popup__btn-close-for-addCard" title="Закрыть"></button>
       </div>
     </div>
 
