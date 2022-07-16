@@ -158,9 +158,9 @@ function cloneCard({ name, link }) {
 function createUserCard() {
   
   let itemo = {
-    name: inputName.value,
-    link: inputLink.value,
-    alt: inputLink.value,
+    name: inputName.textContent,
+    link: inputLink.textContent
+    /*alt: inputName.textContent,*/
   }
   const userCard = cloneCard(itemo);
   elements.prepend(userCard);
