@@ -159,7 +159,7 @@ function createUserCard() {
   
   let itemo = {
     name: inputName.textContent,
-    link: inputLink.textContent
+    link: inputLink.textContent,
     /*alt: inputName.textContent,*/
   }
   const userCard = cloneCard(itemo);
