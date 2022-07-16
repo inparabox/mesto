@@ -2,6 +2,7 @@
   height: 19px;
   min-width: 22px;
   background: transparent url(../../../images/like.svg) 50%/19px no-repeat;
+  background-size: 100%;
   border: 0;
   margin: auto 20px auto auto;
   padding: 0;
@@ -13,6 +14,6 @@
   transition: 0.5s all;
 }
 
-.element__button-like.active {
-  background-color: #000000;
+.element__button-like-active {
+  background: url(../../../images/like-active.svg);
 }
