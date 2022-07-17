@@ -246,15 +246,7 @@ function cloneCard(item) {
   
   // подписка на события
   newBox.querySelector('.element__button-like').addEventListener('click', like);
-
-
-  newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
-    console.log('Тыкнул на корзину');
-    const buttonDel = document.querySelector('.element__delete-button');
-    const elementToDelete = buttonDel.closest('.element');
-    elementToDelete.remove();
-  })
-
+  newBox.querySelector('.element__delete-button').addEventListener('click', basket);
 
   link.addEventListener('click', function() {
     popupImage.src = link.src;
@@ -365,3 +357,10 @@ function like (evt) {
   evt.target.classList.toggle('element__button-like-active');
 }
 
+//basket
+
+function basket(evt) {
+  console.log('Тыкнул на корзину');
+  const elementToDelete = this.parentElement;
+  elementToDelete.remove();
+}
