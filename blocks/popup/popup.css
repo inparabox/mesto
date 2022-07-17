@@ -9,4 +9,8 @@
   transition: 0.5s all;
 }
 
+.popup.popup__photo {
 
+  background: rgba(0, 0, 0, 0.9);
+
+}

@@ -35,7 +35,7 @@
         <figure class="element">
           <img
             class="element__image"
-            alt="фото"
+            
           />
           <button type="button" class="element__delete-button"></button>
         </div>
@@ -142,7 +142,7 @@
 
     <div class="popup popup__edit">
       <div class="popup__container">
-        <h3 class="popup__edit-profile">Редактировать профиль</h3>
+        <h3 class="popup__edit-profile popup__title">Редактировать профиль</h3>
         <form name="popup" method="post" class="popup__form">
           <input type="text" class="popup__name" name="popup-name" />
           <input type="text" class="popup__job" name="popup-job" />
@@ -157,7 +157,7 @@
 
     <div class="popup popup__addCard" id="popupAddCard">
       <div class="popup__container">
-        <h3 class="popup__edit-profile">Новое место</h3>
+        <h3 class="popup__edit-profile popup__title">Новое место</h3>
         <form name="popup" method="post" class="popup__form popup__form-add-card">
           <input type="text" class="popup__place-name popup__name" name="popup-name" placeholder="Название"/>
           <input type="text" class="popup__place-link popup__job" name="popup-job" placeholder="Ссылка на картинку"/>
@@ -168,6 +168,18 @@
         </form>
         <button type="button" class="popup__btn-close popup__btn-close-for-addCard" title="Закрыть"></button>
       </div>
+    </div>
+
+
+    <div class="popup popup__photo">
+      <div>
+        <figure class="popup__container-for-photo ">
+          <img class="popup__image">
+          <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+          
+      </div>
+      <button type="button" class="popup__btn-close popup__btn-close-for-photo" title="Закрыть"></button>
     </div>
 
     <script src="scripts/index.js"></script>
