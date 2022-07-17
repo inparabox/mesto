@@ -1,9 +1,14 @@
+//сделать кнопку закрытия на все элементы с одним CSS  - сейчас заведегны разные чтобы отслеживать действия
+
+
+
+
 /*Задаем переменные всем элементам взаимодействия*/
 
 let popupEditProfile = document.querySelector(".popup__edit"); //  попап редактирования профиля
 let openPopupButton = document.querySelector(".open-popup"); // Кнопка редкатирования профиля
 let closePopupButton = document.querySelector(".popup__btn-close"); // Крестик закрытия попапа для Edit profile
-let closePopupButtonAddForm = document.querySelector(".popup__btn-close-for-addCard"); // Крестик закрытия попапа для AddCard
+//let closePopupButtonAddForm = document.querySelector(".popup__btn-close-for-addCard"); // Крестик закрытия попапа для AddCard
 
 /* Находим формы в полях данных из формы*/
 
@@ -32,44 +37,96 @@ const inputLink = document.querySelector('.popup__place-link');
 
 
 const buttonSaveNewElement = document.querySelector('.popup__btn-save-add-form');
+const popupPhoto = document.querySelector('.popup__photo');
+const popupImage = document.querySelector('.popup__image');
+const popupCaption = document.querySelector('.popup__figcaption');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const container = document.querySelector('.popup__container');
 
 
 //вешаем обработчик и открываем поп-ап
 
+const popup = document.querySelector('.popup');
+
+
+
+
 openPopupButton.addEventListener("click", openPopUp);
 
 function openPopUp() {
-  popupEditProfile.classList.add("popup_opened");
+  //popupEditProfile.classList.add("popup_opened");//работает
+  popup.classList.add("popup_opened");
+
+
   nameInput.value = q1.textContent;
   jobInput.value = q2.textContent;
   console.log("Это кнопка редактирования профиля");
 }
 
+
+
+/*
+// Это не работает
+
+const openPopUp = (item, e) => {
+  let popup = document.querySelector('.popup__edit');
+  if(item.link) {
+    popup = document.querySelector('.popup__photo');
+    popup.querySelector('.element__image').src = item.link;
+  }
+  popup.querySelector('.popup__title').textContent = item.name;
+  popup.classList.add('popup_opened');
+  popup.querySelector('.popup__btn-close').addEventListener('click', closePopUp);
+  //popup.addEventListener('click', closePopupByOverlay);
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 // вешаем обработчик и Закрываем и сохраняем данные пользователя поп-ап
 
-closePopupButton.addEventListener("click", closePopUp);
 
+
+
+closePopupButton.addEventListener("click", closePopUp);
 function closePopUp() {
-  popupEditProfile.classList.remove("popup_opened");
+
+  popupEditProfile.classList.remove("popup_opened");//работает
+  //popupPhoto.classList.remove("popup_opened");// это убрать потом
+
   console.log("Это крестик закрытия формы редактирования профиля");
 }
+
+
+
+/*
+Это не работает
+
+const closePopUp = (e) => {
+  const popup = e.target.closest('.popup');
+  popup.classList.remove('popup_opened');
+  popup.querySelector('.popup__btn-close').removeEventListener('click', closePopUp);
+  //popup.removeEventListener('click', closePopupByOverlay);
+}
+
+*/
+
+
+
+
 
 
 /*  V2 в эом случае функции невозможно переиспользовать
@@ -100,7 +157,7 @@ EditFormSaveButton.addEventListener("click", SaveUserDataInProfile); // ново
 
 function SaveUserDataInProfile(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  /*popupEditProfile.classList.remove('popup_opened');*/
+  //popupEditProfile.classList.remove('popup_opened');//работает
   closePopUp();
   q1.textContent = nameInput.value;
   q2.textContent = jobInput.value;
@@ -140,11 +197,14 @@ const initialCards = [
 // Создаем шаблон карточки
 
 
-
+/*
 function cloneCard({ name, link }) {
   const newBox = templateBox.querySelector(".element").cloneNode(true); // Обращение к элементам тега
   newBox.querySelector(".element__image").src = link;
+  newBox.querySelector(".element__image").alt = name;
   newBox.querySelector(".element__text").textContent = name;
+  
+  
   // подписка на события
   newBox.querySelector('.element__button-like').addEventListener('click', function (evt) {
     console.log('Тыкнул на сердечко');
@@ -152,27 +212,75 @@ function cloneCard({ name, link }) {
 
     // спросить как передевать данные в JS если добавить класс в СSS в виде .active и можно ли использовать toggle
   })
+
+
   newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
     console.log('Тыкнул на корзину');
     const buttonDel = document.querySelector('.element__delete-button');
     const elementToDelete = buttonDel.closest('.element');
     elementToDelete.remove();
+  })
+
+
+
+  newBox.querySelector('.element__image').addEventListener('click', zoom)
+
+  return newBox;
+}
+
+
+*/
+
+//TECT
+
+
+
+function cloneCard(item) {
+  const newBox = templateBox.querySelector(".element").cloneNode(true); // Обращение к элементам тега
+  const link = newBox.querySelector(".element__image");
+  //const alt = newBox.querySelector(".element__image");
+  const name = newBox.querySelector(".element__text");
+  name.textContent = item.name;
+  link.src = item.link;
+  
+  
+  // подписка на события
+  newBox.querySelector('.element__button-like').addEventListener('click', function (evt) {
+    console.log('Тыкнул на сердечко');
+  })
+
+
+  newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
+    console.log('Тыкнул на корзину');
+    const buttonDel = document.querySelector('.element__delete-button');
+    const elementToDelete = buttonDel.closest('.element');
+    elementToDelete.remove();
+  })
+
+
+  link.addEventListener('click', function() {
+    popupImage.src = link.src;
+    popupCaption.textContent = item.name;
+    popupPhoto.classList.add("popup_opened");
 
   })
-  
+
   return newBox;
 }
 
 
 
+
+
+
 function createUserCard() {
   
-  let itemo = {
+  let item = {
     name: inputName.value,
     link: inputLink.value,
-    alt: inputLink.value,
+    alt: inputName.value,
   }
-  const userCard = cloneCard(itemo);
+  const userCard = cloneCard(item);
   elements.prepend(userCard);
 
 }
@@ -204,7 +312,8 @@ initialCards.forEach((item) => {
 
 buttonAddNew.addEventListener('click', (evt) => {
   console.log('Хочешь добавить новое фото');
-  openPopUpAddNewPlace();
+  openPopUpAddNewPlace();//работает
+
 
 })
 
@@ -214,13 +323,11 @@ function openPopUpAddNewPlace() {
 }
 
 
-
-
-/**/
 //Закрываем поп-ап ADD NEW PLACE
 buttonClosePopUpAddNew.addEventListener('click', (evt) => {
   console.log('Закртываем поп-ап ADD NEW');
-  closePopUpAddNewPlace();
+  closePopUpAddNewPlace(); //работает
+
 })
 
 
