@@ -245,9 +245,7 @@ function cloneCard(item) {
   
   
   // подписка на события
-  newBox.querySelector('.element__button-like').addEventListener('click', function (evt) {
-    console.log('Тыкнул на сердечко');
-  })
+  newBox.querySelector('.element__button-like').addEventListener('click', like);
 
 
   newBox.querySelector('.element__delete-button').addEventListener('click', function (evt) {
@@ -362,4 +360,8 @@ function clearForm (evt) {
 }
 
 //закрашиваем like
+
+function like (evt) {
+  evt.target.classList.toggle('element__button-like-active');
+}
 
