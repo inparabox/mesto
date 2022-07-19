@@ -1,4 +1,4 @@
-//сделать кнопку закрытия на все элементы с одним CSS  - сейчас заведегны разные чтобы отслеживать действия
+//сделать кнопку закрытия на все элементы с одним CSS  - сейчас заведены разные функции
 
 
 const popup = document.querySelector('.popup');
@@ -6,7 +6,7 @@ const popupEditProfile = document.querySelector(".popup__edit"); //  попап 
 const popupAddNewPlace = document.querySelector('.popup__addCard'); //  попап добавления нового места
 
 const editProfileButton = document.querySelector(".open-popup"); // Кнопка редкатирования профиля
-const closePopupButton = document.querySelector(".popup__btn-close"); // Крестик закрытия попапа для Edit profile
+const closePopupButton = document.querySelector(".popup__btn-close"); // Крестик закрытия попапа
 
 
 
@@ -30,7 +30,7 @@ const addElementButton = document.querySelector('.profile__button-add');
 
 
 
-const buttonClosePopUpAddNew = document.querySelector('.popup__btn-close-for-addCard');
+//const buttonClosePopUpAddNew = document.querySelector('.popup__btn-close-for-addCard');
 
 
 
@@ -45,7 +45,7 @@ const popupImage = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__figcaption');
 
 
-const container = document.querySelector('.popup__container');
+//const container = document.querySelector('.popup__container');
 
 
 
@@ -62,18 +62,28 @@ function openPopUp() {
   console.log("Это кнопка редактирования профиля");
 }
 
-//closePopupButton.addEventListener("click", closePopup); // обработчик убран в функцию открытия, чтобы не утекала память
 
-
-
-
-
-
-
-
+/*
+const openPopUp = (item, evt) => {
+  let popup = document.querySelector('.popup__edit');
+  if(item.link) {
+    popup = document.querySelector('.popup__addCard');
+    popup.querySelector('.popup__image').src = item.link;
+    console.log('верняк');
+  }
+  popup.querySelector('.popup__image').alt = item.name;
+  popup.classList.add('popup_opened');
+  popup.querySelector('.close-button').addEventListener('click', closePopup);
+  ///popup.addEventListener('click', closePopupByOverlay);
+}
+*/
 
 
 /*
+// обработчик и функция убраны в функцию открытия, чтобы не утекала память
+
+closePopupButton.addEventListener("click", closePopup); 
+
 function closePopup() {
   popup.classList.remove("popup_opened");
   console.log("закрыли форму редактирования профиля");
@@ -85,16 +95,8 @@ const closePopup = (evt) => {
   const popup = evt.target.closest('.popup');
   popup.classList.remove('popup_opened');
   popup.querySelector('.popup__btn-close').removeEventListener('click', closePopup);
+  console.log('Попап закрыт')
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -103,7 +105,7 @@ EditFormSaveButton.addEventListener("click", SaveUserDataInProfile); // ново
 
 function SaveUserDataInProfile(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-  closePopup();
+  closePopup(evt);
   q1.textContent = nameInput.value;
   q2.textContent = jobInput.value;
   console.log("Это кнопка сохранения и отправики новых данных в форму");
@@ -183,7 +185,6 @@ function cloneCard({ name, link }) {
 function cloneCard(item) {
   const newBox = templateBox.querySelector(".element").cloneNode(true); // Обращение к элементам тега
   const link = newBox.querySelector(".element__image");
-  //const alt = newBox.querySelector(".element__image");
   const name = newBox.querySelector(".element__text");
   name.textContent = item.name;
   link.src = item.link;
@@ -198,8 +199,8 @@ function cloneCard(item) {
     popupImage.src = link.src;
     popupCaption.textContent = item.name;
     popupPhoto.classList.add("popup_opened");
+    popupPhoto.querySelector('.popup__btn-close').addEventListener('click', closePopup);
   })
-
   return newBox;
 }
 
@@ -243,14 +244,13 @@ function openPopUpAddNewPlace() {
 buttonClosePopUpAddNew.addEventListener('click', (evt) => {
   console.log('Закртываем поп-ап ADD NEW');
   //closePopUpAddNewPlace(); //работает
-  closePopup();
+  closePopup(evt);
 })
 
 // функция закрытия поп-апа ADD NEW PLACE
 function closePopUpAddNewPlace() {
   popupAddNewPlace.classList.remove("popup_opened");
 }
-
 */
 
 
@@ -266,7 +266,7 @@ function addUserPlace(evt) {
   console.log('Кнопка Сохранить и закрываем поп-ап ADD NEW');
   createUserCard();
   //closePopUpAddNewPlace();  
-  closePopup();
+  closePopup(evt);
 }
 
 //очистка формы
