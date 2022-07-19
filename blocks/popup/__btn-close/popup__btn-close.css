@@ -24,3 +24,28 @@
     height: 20px;
   }
 }
+
+.popup__btn-close.popup__btn-close-for-photo {
+  position: absolute;
+  top: -29px;
+  right: -40px;
+}
+
+
+/*
+
+.popup__btn-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: transparent url(../../../images/Close-Icon.svg) 50%/32px no-repeat;
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+*/
+
+
+
