@@ -1,3 +1,4 @@
+
 //сделать кнопку закрытия на все элементы с одним CSS  - сейчас заведены разные функции
 
 
@@ -292,3 +293,5 @@ function basket(evt) {
   const elementToDelete = this.parentElement;
   elementToDelete.remove();
 }
+
+

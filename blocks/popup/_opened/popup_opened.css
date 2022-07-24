@@ -1,4 +1,8 @@
 .popup_opened {
   display: block;
   transition: 0.5s all;
+  visibility: visible;
+  opacity: 1;
 }
+
+
