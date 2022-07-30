@@ -14,6 +14,9 @@ const btnAddNewElement = document.querySelector('.profile__button-add').addEvent
 const popupAddCard = document.querySelector('.popup__addCard');
 const popupPlaceName = document.querySelector('.popup__place-name');
 const popupPlaceLink = document.querySelector('.popup__place-link');
+const popupPhoto = document.querySelector('.popup__photo');
+const popupImage = popupPhoto.querySelector('.popup__image');
+
 
 
 const initialCards = [
@@ -86,7 +89,9 @@ function cloneCard(item) {
     newBox.querySelector('.element__button-like').classList.toggle('element__button-like-active');
   }
 
-  const btnDel = newBox.querySelector('.element__delete-button').addEventListener('click', deleteCard);
+  newBox.querySelector('.element__delete-button').addEventListener('click', deleteCard);
+  newBox.querySelector('.element__image').addEventListener('click', zoom);
+
 
   return newBox;
 }
@@ -110,7 +115,7 @@ function addNewElement(evt) {
   let item = {
     name: popupPlaceName.value,
     link: popupPlaceLink.value,
-    src: popupPlaceName.value,
+    alt: popupPlaceName.value,
   }
   const userCard = cloneCard(item);
   elements.prepend(userCard);
@@ -131,7 +136,13 @@ function deleteCard(evt) {
   cardToGo.remove();
 }
 
-
+function zoom(evt) {
+  popupPhoto.classList.add('popup_opened');
+  popupPhoto.querySelector('.popup__btn-close').addEventListener('click', closePopup);
+  popupImage.src = evt.target.closest('.element__image').src;
+  console.log('Тыкнул на фото');
+  
+}
 
 
 
