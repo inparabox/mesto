@@ -1,5 +1,4 @@
 .popup__image {
-
   border: none;
   object-fit: cover;
   height: 75vh;
@@ -7,58 +6,3 @@
   padding-top: 12.76px;
   margin: 0;
 }
-
-
-.popup__figure-img-and-photo{
-  margin: 0;
-  padding: 0;
-}
-
-
-.popup__container-for-photo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-
-
-}
-
-
-
-.popup__figcaption{
-
-  margin-top: 10px;
-  text-align: left;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.25;
-  color: white;
-
-}
-
-
-
-/*
-.popup__figure-img-and-photo{
-  margin: 0;
-  padding: 0;
-}
-
-
-.popup__container-for-photo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-
-
-}
-
-*/

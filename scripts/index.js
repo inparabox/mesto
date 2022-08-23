@@ -20,6 +20,9 @@ const popupPlaceName = document.querySelector(".popup__place-name");
 const popupPlaceLink = document.querySelector(".popup__place-link");
 const popupPhoto = document.querySelector(".popup__photo");
 const popupImage = popupPhoto.querySelector(".popup__image");
+const popupCaption = document.querySelector('.popup__figcaption');
+
+
 
 const initialCards = [
   {
@@ -151,5 +154,6 @@ function zoom(evt) {
     .querySelector(".popup__btn-close")
     .addEventListener("click", closePopup);
   popupImage.src = evt.target.closest(".element__image").src;
+  popupCaption.textContent = evt.target.closest(".element__image").alt;
   console.log("Тыкнул на фото");
 }
