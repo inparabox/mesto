@@ -1,5 +1,5 @@
 const popup = document.querySelector(".popup");
-const popupEdit = document.querySelector(".popup__edit");
+const popupEdit = document.querySelector(".popup_edit");
 const popupBtnClose = document.querySelector(".popup__btn-close");
 const profileName = document.querySelector(".profile__name");
 const profileMission = document.querySelector(".profile__mission");
@@ -15,10 +15,10 @@ const elements = document.querySelector(".elements");
 const btnAddNewElement = document
   .querySelector(".profile__button-add")
   .addEventListener("click", openPopUpAddNew);
-const popupAddCard = document.querySelector(".popup__addCard");
+const popupAddCard = document.querySelector(".popup_addCard");
 const popupPlaceName = document.querySelector(".popup__place-name");
 const popupPlaceLink = document.querySelector(".popup__place-link");
-const popupPhoto = document.querySelector(".popup__photo");
+const popupPhoto = document.querySelector(".popup_photo");
 const popupImage = popupPhoto.querySelector(".popup__image");
 const popupCaption = document.querySelector('.popup__figcaption');
 
