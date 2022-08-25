@@ -116,6 +116,9 @@ function openPopUpAddNew() {
     .querySelector(".popup__btn-save")
     .addEventListener("click", addNewElement);
   console.log("Попап добавления нового элемента открыт");
+  popupAddCard
+  .querySelector(".popup__btn-save")
+  .addEventListener("click", clearForm);
 }
 
 function addNewElement(evt) {
@@ -128,9 +131,7 @@ function addNewElement(evt) {
   const userCard = cloneCard(item);
   elements.prepend(userCard);
   closePopup(evt);
-  popupAddCard
-    .querySelector(".popup__btn-save")
-    .addEventListener("click", clearForm);
+
   console.log(
     "Кнопка Сохранить: закрываем поп-ап ADD NEW + добавляем новый элемент"
   );
