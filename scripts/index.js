@@ -4,14 +4,18 @@ const profileMission = document.querySelector(".profile__mission");
 
 const profileButtonEdit = document.querySelector(".profile__button-edit");
 
-const popupBtnCloseEditProfile = document.querySelector(".popup__btn-close-edit-form");
-const popupBtnCloseAddForm = document.querySelector(".popup__btn-close-add-form");
-const popupBtnCloseZoomPhoto = document.querySelector(".popup__btn-zoom-photo")
+const popupBtnCloseEditProfile = document.querySelector(
+  ".popup__btn-close-edit-form"
+);
+const popupBtnCloseAddForm = document.querySelector(
+  ".popup__btn-close-add-form"
+);
+const popupBtnCloseZoomPhoto = document.querySelector(".popup__btn-zoom-photo");
 
-
-const popupBtnSaveProfileData = document.querySelector(".popup__btn-save-edit-form");
+const popupBtnSaveProfileData = document.querySelector(
+  ".popup__btn-save-edit-form"
+);
 const popupBtnSaveAddForm = document.querySelector(".popup__btn-save-add-form");
-
 
 const popupName = document.querySelector(".popup__name");
 const popupJob = document.querySelector(".popup__job");
@@ -23,7 +27,6 @@ const elements = document.querySelector(".elements");
 const btnAddNewElement = document.querySelector(".profile__button-add");
 const popupAddCard = document.querySelector(".popup_addCard");
 const popupInputElements = document.querySelector(".popup__form-add-card");
-
 
 const popupPlaceName = document.querySelector(".popup__place-name");
 const popupPlaceLink = document.querySelector(".popup__place-link");
@@ -58,9 +61,6 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-
-
-
 
 function openPopup(popupElement) {
   popupElement.classList.add("popup_opened");
@@ -103,7 +103,9 @@ function cloneCard(item) {
   newBox
     .querySelector(".element__delete-button")
     .addEventListener("click", deleteCard);
-  newBox.querySelector(".element__image").addEventListener("click", zoomImageCard);
+  newBox
+    .querySelector(".element__image")
+    .addEventListener("click", zoomImageCard);
   return newBox;
 }
 
@@ -119,19 +121,15 @@ initialCards.forEach((item) => {
   elements.prepend(sixElements);
 });
 
-
 btnAddNewElement.addEventListener("click", function () {
   openPopup(popupAddCard);
-    popupAddCard
-      .querySelector(".popup__btn-save")
-      .addEventListener("click", addNewElement);
-    clearForm();
+  popupAddCard
+    .querySelector(".popup__btn-save")
+    .addEventListener("click", addNewElement);
+  clearForm();
 });
 
-
-
 popupBtnSaveAddForm.addEventListener("submit", addNewElement);
-
 
 function addNewElement(evt) {
   evt.preventDefault();
@@ -144,7 +142,6 @@ function addNewElement(evt) {
   elements.prepend(userCard);
   closePopup(evt);
 }
-
 
 function clearForm() {
   popupInputElements.reset();
